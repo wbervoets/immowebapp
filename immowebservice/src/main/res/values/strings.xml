@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="generic_error_title">Error</string>
+    <string name="generic_error_description">A generic error occurred</string>
+    <string name="no_internet_title">Not connected</string>
+    <string name="no_internet_description">It looks like we could not connect to the Immoweb service</string>
+    <string name="wrong_listing_title">Listing detail error</string>
+    <string name="wrong_listing_description">The listing detail could not be fetched</string>
+</resources>

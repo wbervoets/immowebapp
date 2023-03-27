@@ -1,0 +1,11 @@
+{
+  "bedrooms": 3,
+  "city": "Bordeaux",
+  "id": 3,
+  "area": 550.0,
+  "price": 3000000.0,
+  "professional": "GSL OWNERS",
+  "propertyType": "Maison - Villa",
+  "offerType": 1,
+  "rooms": 7
+}
