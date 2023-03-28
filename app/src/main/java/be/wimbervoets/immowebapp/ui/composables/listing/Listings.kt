@@ -53,8 +53,10 @@ fun ListingItem(listing: Listing, onNavigateToDetail: (Long) -> Unit) {
             )
             PropertyType(propertyType = listing.propertyType)
             Price(price = listing.price, currency = listing.currency, modifier = paddingTopModifier)
-            Row(modifier = paddingTopModifier) {
-                BedRooms(listing.nrOfBedrooms, modifier = Modifier.padding(end = 8.dp))
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = paddingTopModifier) {
+                BedRooms(listing.nrOfBedrooms)
                 SurfaceArea(surfaceArea = listing.surface)
             }
             City(city = listing.city, modifier = paddingTopModifier)

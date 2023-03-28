@@ -54,11 +54,12 @@ fun Price(price: Double, currency: Currency, modifier: Modifier = Modifier) {
 
 @Composable
 fun BedRooms(nrOfBedRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolean = false) {
-    Row (
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        if (nrOfBedRooms != null) {
+    if (nrOfBedRooms != null) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = modifier
+        ) {
             if (showIcon) {
                 Icon(
                     painter = painterResource(R.drawable.ic_bed),
@@ -70,8 +71,7 @@ fun BedRooms(nrOfBedRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolea
                 text = "$nrOfBedRooms slp",
                 color = colorResource(id = R.color.black),
                 style = MaterialTheme.typography.bodyMedium,
-                modifier = modifier
-                    .wrapContentSize()
+                modifier = Modifier.wrapContentSize()
             )
         }
     }
@@ -79,11 +79,13 @@ fun BedRooms(nrOfBedRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolea
 
 @Composable
 fun Rooms(nrOfRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolean = false) {
-    Row (
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        if (nrOfRooms != null) {
+    if (nrOfRooms != null) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = modifier
+        ) {
+
             if (showIcon) {
                 Icon(
                     painter = painterResource(R.drawable.ic_room),
@@ -95,8 +97,7 @@ fun Rooms(nrOfRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolean = fa
                 text = stringResource(R.string.nr_of_rooms, nrOfRooms),
                 color = colorResource(id = R.color.black),
                 style = MaterialTheme.typography.bodyMedium,
-                modifier = modifier
-                    .wrapContentSize()
+                modifier = Modifier.wrapContentSize()
             )
         }
     }
@@ -104,11 +105,13 @@ fun Rooms(nrOfRooms: Int?, modifier: Modifier = Modifier, showIcon: Boolean = fa
 
 @Composable
 fun SurfaceArea(surfaceArea: Double?, modifier: Modifier = Modifier, showIcon: Boolean = false) {
-    Row (
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        if (surfaceArea != null) {
+    if (surfaceArea != null) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = modifier
+        ) {
+
             if (showIcon) {
                 Icon(
                     painter = painterResource(R.drawable.ic_house),
@@ -120,8 +123,7 @@ fun SurfaceArea(surfaceArea: Double?, modifier: Modifier = Modifier, showIcon: B
                 text = "$surfaceArea m²",
                 color = colorResource(id = R.color.black),
                 style = MaterialTheme.typography.bodyMedium,
-                modifier = modifier
-                    .wrapContentSize()
+                modifier = Modifier.wrapContentSize()
             )
         }
     }
