@@ -10,12 +10,12 @@
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WeatherApp"
+        android:theme="@style/Theme.ImmowebApp"
         tools:targetApi="31">
         <activity
             android:name="be.wimbervoets.immowebapp.ui.ImmowebActivity"
             android:exported="true"
-            android:theme="@style/Theme.WeatherApp">
+            android:theme="@style/Theme.ImmowebApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

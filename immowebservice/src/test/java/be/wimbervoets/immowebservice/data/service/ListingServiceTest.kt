@@ -37,7 +37,7 @@ class ListingServiceTest {
     private val EUR = Currency.getInstance("EUR")
 
     @BeforeEach
-    fun createRetrofitInterfaceForOpenWeatherService(mockWebServerBaseURL: HttpUrl, json: Json) {
+    fun createRetrofitInterfaceForImmowebService(mockWebServerBaseURL: HttpUrl, json: Json) {
         val converterFactory = RetrofitSerializationConverterFactoryModule.jsonConverterFactory(
             json
         )

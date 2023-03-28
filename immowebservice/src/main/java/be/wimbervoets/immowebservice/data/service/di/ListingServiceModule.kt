@@ -14,7 +14,7 @@ object ListingServiceModule {
 
     @Provides
     @Reusable
-    fun openWeatherService(retrofit: Retrofit): ListingService {
+    fun listingService(retrofit: Retrofit): ListingService {
         return retrofit.create(ListingService::class.java)
     }
 }

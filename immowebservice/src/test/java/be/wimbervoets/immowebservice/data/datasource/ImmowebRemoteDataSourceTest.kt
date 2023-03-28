@@ -29,7 +29,7 @@ import java.util.*
 @OptIn(ExperimentalCoroutinesApi::class)
 class ImmowebRemoteDataSourceTest {
 
-    private lateinit var weatherRemoteDatasource: ListingsRemoteDatasource
+    private lateinit var listingsRemoteDatasource: ListingsRemoteDatasource
 
     @MockK
     private lateinit var listingService: ListingService
@@ -39,7 +39,7 @@ class ImmowebRemoteDataSourceTest {
 
     @BeforeEach
     fun setup() {
-        weatherRemoteDatasource = ListingsRemoteDatasource(
+        listingsRemoteDatasource = ListingsRemoteDatasource(
             listingService,
             FailureReasonMapper(mockContext)
         )
@@ -56,7 +56,7 @@ class ImmowebRemoteDataSourceTest {
                 listingsDTO
             )
 
-            val result: ResultOf<ListingsDTO> = weatherRemoteDatasource.listings()
+            val result: ResultOf<ListingsDTO> = listingsRemoteDatasource.listings()
             assertTrue(result is ResultOf.Success)
 
             val listings = (result as ResultOf.Success).data
@@ -82,7 +82,7 @@ class ImmowebRemoteDataSourceTest {
                 "error".toResponseBody()
             )
 
-            val result: ResultOf<ListingsDTO> = weatherRemoteDatasource.listings()
+            val result: ResultOf<ListingsDTO> = listingsRemoteDatasource.listings()
             assertTrue(result is ResultOf.Failure)
             val failureResult = result as ResultOf.Failure
             assertEquals("Generic error title", failureResult.failureReason.title)
