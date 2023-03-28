@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.compose.ui) // Text, ...
     implementation(libs.androidx.compose.material3) // Material3Theme
     implementation(libs.androidx.compose.ui.tooling) // @Preview compose
+    implementation(libs.androidx.compose.navigation) // Navigate between list & detail screen
     implementation(libs.coil.compose)
     implementation(libs.androidx.compose.constraintlayout)
     implementation(libs.androidx.compose.activity) // setContent { .. } on ComponentActivity

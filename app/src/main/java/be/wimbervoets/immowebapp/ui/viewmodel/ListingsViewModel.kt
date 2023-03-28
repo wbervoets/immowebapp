@@ -16,10 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class ListingsViewModel @Inject constructor(private val listingsRepository: ListingsRepository) : ViewModel() {
 
-    init {
-        Timber.d("ListingsViewModel init")
-    }
-
     private val _listings: MutableLiveData<List<Listing>> = MutableLiveData<List<Listing>>()
     val listings: LiveData<List<Listing>> = _listings
 
@@ -28,6 +24,11 @@ class ListingsViewModel @Inject constructor(private val listingsRepository: List
 
     private val _loading: MutableLiveData<Boolean?> = MutableLiveData(null)
     val loading: LiveData<Boolean?> = _loading
+
+    init {
+        Timber.d("ListingsViewModel init")
+        fetchCurrentListings()
+    }
 
     fun fetchCurrentListings() {
         _loading.value = true

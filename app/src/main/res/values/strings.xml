@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Immoweb App</string>
-<!--    <string name="no_location_permission_granted">No location permission was granted</string>-->
-    <string name="retry">Retry</string>
     <string name="refresh">Refresh</string>
-<!--    <string name="weather_condition">Weather Condition</string>-->
+    <string name="overview">Overview</string>
+    <string name="agency">Agency</string>
+    <string name="financial">Financial</string>
+    <string name="for_sale">%s for sale</string>
+    <string name="nr_of_rooms">%d rooms</string>
 </resources>

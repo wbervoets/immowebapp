@@ -7,6 +7,7 @@ android_compose_constraintlayout = "1.1.0-alpha09"
 android_compose_compiler = "1.4.4"
 android_compose = "1.4.0"
 android_compose_material3 = "1.0.1"
+android_compose_navigation = "2.5.3"
 coil = "2.2.2"
 constraintlayout = "2.1.4"
 dagger = "2.45"
@@ -30,6 +31,7 @@ androidx-compose-constraintlayout = { module = "androidx.constraintlayout:constr
 androidx-compose-runtime =  { module = "androidx.compose.runtime:runtime", version.ref = "android_compose" }
 androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "android_compose"}
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "android_compose_material3"}
+androidx-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "android_compose_navigation"}
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "android_compose" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "android_compose" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }

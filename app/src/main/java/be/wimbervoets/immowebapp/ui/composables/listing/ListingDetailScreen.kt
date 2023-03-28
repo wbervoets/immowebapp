@@ -1,4 +1,4 @@
-package be.wimbervoets.immowebapp.ui.composables
+package be.wimbervoets.immowebapp.ui.composables.listing
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,20 +10,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import be.wimbervoets.immowebapp.R
-import be.wimbervoets.immowebapp.ui.viewmodel.ListingsViewModel
+import be.wimbervoets.immowebapp.ui.composables.error.Failure
+import be.wimbervoets.immowebapp.ui.viewmodel.ListingDetailViewModel
 
 @Composable
-fun ListingsScreen(viewModel: ListingsViewModel, onRefresh: () -> Unit) {
+fun ListingDetailScreen(viewModel: ListingDetailViewModel, id: Long) {
+    viewModel.fetchListing(id)
+
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
             .background(color = colorResource(id = R.color.blue))
     ) {
 
-        val (progressIndicator,
-            listingsList,
-            refreshButton) = createRefs()
-
+        val (progressIndicator, listing, error) = createRefs()
 
         val visible = viewModel.loading.observeAsState().value ?: false
         if (visible) {
@@ -38,22 +38,23 @@ fun ListingsScreen(viewModel: ListingsViewModel, onRefresh: () -> Unit) {
             )
         }
 
-        Listings(
-            list = viewModel.listings.observeAsState(initial = emptyList()),
-            modifier = Modifier
-                .constrainAs(listingsList) {
+        val listingDetail = viewModel.listingDetail.observeAsState().value
+        if (listingDetail != null) {
+            ListingDetailItem(listing = listingDetail, modifier = Modifier
+                .constrainAs(listing) {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
                 }
-        )
+            )
+        }
 
-        RefreshButton(
-            onClick = onRefresh,
-            visible = viewModel.loading.observeAsState().value?.not() ?: false,
-            modifier = Modifier.constrainAs(refreshButton) {
+        Failure(
+            failureReason = viewModel.failureReason.observeAsState().value, modifier = Modifier.constrainAs(error) {
+                start.linkTo(parent.start)
                 end.linkTo(parent.end)
+                top.linkTo(parent.top)
                 bottom.linkTo(parent.bottom)
             }
         )
