@@ -27,7 +27,7 @@ fun ListingDetailItem(listing: Listing, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp)
-                .height(300.dp)
+                .height(200.dp)
         )
         Header(text = stringResource(R.string.for_sale, listing.propertyType))
         Price(price = listing.price, currency = listing.currency, modifier = paddingTopModifier)
